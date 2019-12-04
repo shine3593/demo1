@@ -21,13 +21,32 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-				</configuration>
-			</plugin>
+         <groupId>org.mule.tools.maven</groupId>
+         <artifactId>mule-maven-plugin</artifactId>
+         <version>3.3.2</version>
+     <extensions>true</extensions>
+               <configuration>
+            <cloudHubDeployment>
+             <uri>https://anypoint.mulesoft.com<;/uri>
+                    <muleVersion>4.2.1</muleVersion> 
+                    <username>syed3300</username> 
+                    <password>Bygun123</password> 
+                    <environment>Sandbox</environment> 
+                   <!--   <region>us-west-2</region>-->region changes based on allocation of workers.
+                    <workerType>Micro</workerType>
+            <applicationName>cicd</applicationName>
+              </cloudHubDeployment>
+            </configuration>
+          <executions>
+             <execution>
+                <id>deploy</id>        
+                <phase>deploy</phase>
+                    <goals>
+                      <goal>deploy</goal>
+                    </goals>
+                  </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 
